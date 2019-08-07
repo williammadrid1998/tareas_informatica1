@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\usepackage{color}
+
+\title{Laboratorio 2}
+\author{William Madrid \\ Gustavo Sosa}
+\date{5 de agosto de 2019}
+
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio \#1}
+Demostrar utilizando induccion\\
+\\
+Caso base \\
+ \\
+\begin{math}
+\forall\ n.\ n^3\geq n^2\\
+\\
+n = 0 \\
+(0) (0) (0) \geq (0) (0) \\
+0 \geq 0 \\
+0 = 0\\  
+\\
+\end{math}
+Caso inductivo \\
+\\
+\begin{math}
+n = n + 1\\
+(n + 1) (n + 1) (n + 1) \geq (n + 1) (n + 1)\\
+(n + 1) (n^2 + 2(1)(n) + 1^2) \geq (n^2 + 2(1)(n) + 1^2)\\
+a = (n^2 + 2(1)(n) + 1^2)\\
+(n + 1) a \geq a\\
+an + (1)a \geq a\\
+
+\end{math}
+ 
+\section*{Ejercicio \#2}
+Demostrar utilizando induccion la desigualdad\\
+
+\begin{math}
+∀ n. (1 + x)n \geq nx\\
+\end{math}
+\\
+Caso base\\
+\\
+\begin{math}
+n = 0 y x = 0\\
+(1 + x)0 \geq (0) (0) \\
+(x)0 \geq (0) (0)\\
+1 \geq 0\\
+\end{math}
+Caso inductivo \\
+\\
+\begin{math}
+n + 1 \\ 
+(1  + x )^n+1 \geq (n +1) (x)\\ 
+(1  + x )^n * (1  + x ) \geq (n +1) (x) \\
+1(1  + x )^n + x (1  + x ) \geq nx + x \\
+x(1  + x )^n +
+\colorbox{yellow}{
+\begin{math}
+ (1  + x ) \geq nx 
+\end{math}
+}
++x
+\\
+x(1 + x)^n \geq x \\
+(1 + x)^n \geq 1 \\
+\end{math}
+\\
+Lo marcado en amarillo es la hipotesis inductiva\\
+\\
+
+
+
+\end{document}

@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\usepackage{color}
+
+\title{Laboratorio 3}
+\author{Gustavo Sosa \\ William Madrid }
+\date{13 de agosto de 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio \#1}
+\begin{math}
+n = [\sigma(\sigma(\sigma(0)))] = 3\\
+m = [\sigma(\sigma(\sigma(\sigma(0))))] = 4\\
+\\
+n\oplus m =\\
+\sigma(\sigma(\sigma(0\oplus m)))\\
+\sigma(\sigma(\sigma(m)))\\
+\sigma(\sigma(\sigma(\sigma(\sigma(\sigma(\sigma(0)))))))
+\end{math}
+
+\section*{Ejercicio \#2}
+\[
+a\otimes b := \left\{
+ \begin{array}{l l}
+            0 & \mbox{si } a=o \\
+            0 & \mbox{si } b=o \\
+            a & \mbox{si } b=1 \\
+            b & \mbox{si } a=1 \\
+            \sum_{0}^{b}a & \mbox{si } b=\sigma(i) \\
+            \sum_{0}^{a}b & \mbox{si } a=\sigma(i) \\
+        \end{array}
+        \right.
+\]\\
+\\
+\\
+Caso base\\
+b = 1\\
+\begin{math}
+a=\sigma(n)\\
+a\otimes b\\
+\sigma(n)\otimes \sigma(0)\\
+\sigma(n)\\
+\end{math}\\
+\\
+Caso inductivo \\
+\begin{math}
+b=\sigma(\sigma(0))\\
+a=\sigma(n)=\sigma(\sigma(\sigma(0)))\\
+\\
+a\otimes b\\
+\sigma(n)\otimes \sigma(\sigma(0))\\
+\sigma(n)\oplus \sigma(n)\\
+\sigma(\sigma(\sigma(0)))\oplus \sigma(\sigma(\sigma(0)))\\
+\sigma(\sigma(\sigma(\sigma(\sigma(\sigma(0))))))\\
+\end{math}
+
+\section*{Ejercicio \#3}
+
+
+\begin{itemize}
+        \item{$\sigma(\sigma(\sigma(0)))\otimes 0$}\\
+        \\
+        \begin{math}
+        a=\sigma(\sigma(\sigma(0)))\\
+        b=0\\
+        \\
+        a\otimes b = \\
+        \sigma(\sigma(\sigma(0)))\otimes 0 =0\\
+        \end{math}
+        \item{$\sigma(\sigma(\sigma(0)))\otimes \sigma(0)$}\\
+        \\
+        \begin{math}
+        a=\sigma(\sigma(\sigma(0)))\\
+        b=\sigma(0)\\
+        \\
+        a\otimes b = \\
+        \sigma(\sigma(\sigma(0)))\otimes \sigma(0)\\
+        \sigma(\sigma(\sigma(0)))\\
+        \end{math}
+        \item{$\sigma(\sigma(\sigma(0)))\otimes\sigma(\sigma(0))$}\\
+        \\
+        \begin{math}
+        a=\sigma(\sigma(\sigma(0)))\\
+        b=\sigma(\sigma(0))\\
+        \\
+        \sigma(\sigma(\sigma(0)))\otimes \sigma(\sigma(0))\\
+        \sigma(\sigma(\sigma(0)))\oplus \sigma(\sigma(\sigma(0)))\\
+        \sigma(\sigma(\sigma(\sigma(\sigma(\sigma(0))))))\\
+        \end{math}
+\end{itemize}
+
+
+\section*{Ejercicio \#4}
+
+\begin{itemize}
+        \item{$a\oplus \sigma(\sigma(0))=\sigma(\sigma(a))$}\\
+        \\
+        Caso base\\
+        \\
+        {$a = 0 $}\\
+        {$0\oplus \sigma(\sigma(0))=\sigma(\sigma(a))$}\\
+        {$\sigma(\sigma(0))=\sigma(\sigma(a))$}\\
+        \\
+        Caso inductivo\\
+        \\
+        {$a = \sigma(a) $}\\
+        {$\sigma(a)\oplus \sigma(\sigma(0))=\sigma(\sigma(\sigma(a)))$}\\
+        {$ \sigma(\sigma(0 \oplus \sigma(a)))=\sigma(\sigma(\sigma(a)))$} Por definicion de suma\\
+        {$ \sigma(\sigma(\sigma(a)))=\sigma(\sigma(\sigma(a)))$} Por propiedad de suma\\
+        \\
+        \\
+        \\
+        \\
+        \\
+   
+     
+
+        \item{$a \otimes b = b \otimes a$}\\
+        \\
+    
+\[
+a\otimes c := \left\{
+ \begin{array}{l l}
+            0 & \mbox{si } a=o \\
+            0 & \mbox{si } c=o \\
+            a & \mbox{si } c=1 \\
+            c & \mbox{si } a=1 \\
+           (a \otimes c)\oplus a & \mbox{si } c=\sigma(c)\\
+        \end{array}
+        \right.
+\]\\
+        Caso base\\
+        \begin{math}
+        a=0\\
+        a\otimes b = b\otimes a\\
+        0\otimes b = b\otimes 0\\
+        0  =  0\\
+        \end{math}\\
+        \\
+        Caso inductivo \\
+        \begin{math}
+        a=\sigma(a)\\
+        a\otimes b = b\otimes a\\
+        \end{math}\\
+       {$a\otimes \sigma(b)  = (a\otimes b) \otimes a$} Por definicion de la multiplicacion \\
+        {$(a\otimes b)\oplus b = (b\otimes a) \oplus b$} Por hipotesis inductiva \\
+        {$(a\otimes b)\oplus b = (a\otimes b) \oplus b$} \\
+   
+        
+        
+        \item{$a \otimes (b \otimes c)=(a\otimes b)\otimes c$}\\
+        \\
+        Caso base\\
+        \\
+        \begin{math}
+        c=0\\
+        a \otimes (b \otimes 0)=(a\otimes b)\otimes 0\\
+        a \otimes  0 = 0\\
+          0 = 0\\
+        \end{math}
+         Caso inducctivo\\
+         \\
+         {$a \otimes (b \otimes c)=(a\otimes b)\otimes c$} Hipotesis inductiva\\
+         {$c=\sigma(c)$}\\
+         {$a \otimes (b \otimes \sigma(c))=(a\otimes b)\otimes \sigma(c)$} Por definicion de multiplicacion\\
+         {$a \otimes(b \oplus \sigma(c))= (a \otimes b)\otimes c \oplus (a \otimes b)$} Por hipotesis inductiva \\
+         {$a \otimes(b \oplus \sigma(c))= a \otimes (b\otimes c) \oplus a \otimes b$} La suma es conmutativa\\
+         {$a \otimes(b \oplus \sigma(c))= (a \otimes b) \oplus a \otimes (b\otimes c)$} Por factor comun\\
+         {$a \otimes(b \oplus \sigma(c))= a \otimes( b \oplus  (b\otimes c))$} Por definicion de multiplicacion\\
+         {$a \otimes(b \oplus \sigma(c))= a \otimes(b \oplus \sigma(c))$}\\
+         
+
+        
+        \item{$(a\oplus b)\otimes c = (a\otimes c) \oplus (b \otimes c)$}\\
+        \\
+        Caso base\\
+        \begin{math}
+        c=0\\
+        (a\oplus b)=n\\
+        n\otimes 0 = a\otimes 0 \oplus b \otimes 0\\
+        0 = 0 \oplus 0\\
+        0 = 0\\
+        \end{math}\\
+        \\
+        Caso inductivo\\
+        {$(a \oplus b)\otimes c= a\otimes c  \oplus  b \otimes c $}\\
+          {$c=\sigma(c)$}\\
+        {$(a \oplus b)\otimes \sigma(c)= a\otimes c  \oplus  b \otimes c $} Por definicion de multiplicacion\\
+        {$(a \oplus b)\otimes c\oplus (a \oplus b)= (a\otimes c)\oplus a  \oplus ( b \otimes c) \oplus b $} La suma es conmutativa\\
+        {$(a \oplus b)\otimes c\oplus (a \oplus b)= (a\otimes c)  \oplus ( b \otimes c) \oplus a\oplus b $} Por factor comun\\
+        {$(a \oplus b)\otimes c\oplus (a \oplus b)= (a\oplus b)  \otimes c  \oplus a\oplus b $} La suma es comutativa\\
+        {$(a \oplus b)\otimes c\oplus (a \oplus b)= (a\oplus b)  \otimes c  \oplus (a\oplus b) $}\\
+        
+       
+\end{itemize}
+
+\begin{math}
+\end{math}
+
+
+
+
+\end{document}

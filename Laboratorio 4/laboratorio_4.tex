@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+\title{laboratorio 4}
+\author{Gustavo Sosa\\ William Madrid }
+\date{20/08/2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio \#1}
+
+\\\setlength{\parindent}{0cm}
+
+        Conjunto 1:\\
+        \\
+        {$a:=\{1,2,4,8,16,32,64\}$}\\
+        {$d:=\{n\in\mathbb{N}\ |\ \exists i\in\mathbb{N}\ .\ n=2^i\wedge n<100 \}$}\\
+       \\
+        Conjunto 2: \\
+        \\
+         {$b:=\{n\ \in \mathbb{N}\ |\ \exists x \in \mathbb{N}\ .\ x=n/5 \}$}\\
+         {$f:=\{ n\in\mathbb{N}\ |\ \exists x\in \mathbb{N}\ .\ n=x+x+x+x+x \}$}\\
+         \\
+        Conjunto 3:\\
+        \\
+        {$e:=\{ n\in\mathbb{N}\ |\ \exists x\in \mathbb{N}\ .\ x=\sqrt{n} \}$}\\
+       {$c:=\{n\in \mathbb{N}\ |\ \exists x\in\mathbb{N}\ .\ n=x*x \}$}\\
+
+
+
+\section*{Ejercicio \#2}
+
+\begin{enumerate}
+
+        \item{$ A:= \{n \in \mathbb{N}\ |\ n \%  5= 0\}$}
+        \item{$ A:= \{n \in \mathbb{N}\ |\ n \%  5= 0 \wedge n\% 4=0\}$}
+        \item{$ A:= \{n \in \mathbb{N}\ |\ \nexists X \in \mathbb{N}\ .\   0 < x< n\ |\ n\% x= 0 \}$}
+        \item{$ A:= \{a \subset P(\mathbb{N}) \ |\ \exists X \in \mathbb{N} \wedge n\subset a\ .\ x\% 15=0\}$}
+        \item{$ A:= \{X \subset P(\mathbb{N})\ |\ \exists X\in  x \wedge n, i \in \mathbb{N} \sum_{i}^{n}x= 42 \}$}
+     
+\end{enumerate}
+
+\section*{Ejercicio \#3}
+
+\\
+(A,B,C)\\
+{$ A:= \{a \in \mathbb{N}\ |\ \nexists X \in \mathbb{N} \ .\ 0 < x  < a \ |\ a\% x= 0   \}$}\\
+{$ B:= \{b \in \mathbb{N}\ |\ \nexists X \in \mathbb{N} \ .\ 0 < x  < b \ |\ b\% x= 0   \}$}\\
+{$ C:= \{c \in \mathbb{N}\ |\ c= a\ast b \wedge c < 50  \}$}\\
+
+\section*{Ejercicio \#4}
+\begin{enumerate}
+
+        \item{$ A:= \{ (x,x+x)\ |\ x \in \mathbb{N} \}$}
+        \item{$A:= \{ (x,True)x \in \mathbb{N} \ |\ x\% 5= 0 \}$\\
+        $ B:= \{ (x,False) x \in \mathbb{N} \ |\ x\% 5\neq  0 \}$\\
+        $ C:= A\cup B$
+        }
+        \item{$g\circ f$\\
+        $\mathbb{N} -> \mathbb{B}$\\
+        }
+        \item{$ g\circ f $\\
+        $ g\circ f = A\cup B$\\
+        $A:= \{ (x,1)x \in \mathbb{N} \ |\ x\% 5= 0 \}$\\
+        $A:= \{ (x,0)x \in \mathbb{N} \ |\ x\% 5\neq  0 \}$\\
+        }
+        \end{enumerate}
+\section*{Ejercicio \#5}
+\begin{enumerate}
+
+        \item{No es inyectiva, subjetiva o biyectiva}
+        \item{No es inyectiva, subjetiva o biyectiva}
+        \item{Es biyectiva}
+        \item{Es biyectiva}
+     
+
+     
+\end{enumerate}
+\section*{Ejercicio \#6}
+\begin{enumerate}
+
+        \item{$ B_1:= \{ (a,b) a,b \in \mathbb{N} \ |\ a > 0 \wedge a\% 2= 0\wedge b > 0 \}$}
+        
+        \item{$ B_2:= \{ (a,b) a,b \in \mathbb{N} \ |\ a > 1 \wedge a\% 2= 0 \wedge b > 0 \}$}
+        \item{$ B_3:= \{ (a,b) a \in \mathbb{N} \wedge b \in \mathbb{Z}\ |\ a > 0 \wedge a\% 2= 1 \wedge b < 0 \}$}
+        \item{$ B= \{0,0\} \cup \{ (a,b) a,b \in \mathbb{N} \ |\ a > 0 \wedge a\% 2= 0 \wedge b > 0 \} \cup \{ (a,b) a \in \mathbb{N} \wedge b \in \mathbb{Z}\ |\ a > 0 \wedge a\% 2= 1 \wedge b < 0 \}$}
+        \end{enumerate}
+
+
+\end{document}
+  

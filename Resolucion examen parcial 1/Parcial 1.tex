@@ -1,0 +1,246 @@
+\documentclass{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstloadlanguages{c} % Load Perl syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=[sharp]c, % Use Perl in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % Perl functions bold and blue
+        keywordstyle=[2]\color{Purple}, % Perl function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special about identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard Perl functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put Perl function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+       	%
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\perlscript}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.cs}
+\end{itemize}
+}
+
+
+
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{tabular}{l l}
+\multirow{5}{*}{\includegraphics[width=2cm]{logo.png}}
+ & Universidad del Istmo de Guatemala \\
+ & Facultad de Ingenieria \\
+ & Ing. en Sistemas \\
+ & Informatica 1 \\
+ & Prof. Ernesto Rodriguez - \href{mailto:erodriguez@unis.edu.gt}{erodriguez@unis.edu.gt} \\
+\end{tabular}
+
+
+\begin{center}
+        \horrule{0.5pt}
+        \huge{Resolucion del Examen Parcial \#1} \\
+        \large{Gustavo Sosa\\ William Madrid} \\
+        \horrule{1pt}
+\end{center}
+
+\section*{Ejercicio \#1: Induccion (20\%)}
+
+\begin{enumerate}
+        \item{$\forall\ n\geq 1.\ 2 \ast n$ es par}\\
+        \\
+        Caso base\\
+        {$n=1 $}\\
+        {$2(1)$} es par\\
+       R: {$2 $} es par\\
+      
+        Caso inductivo\\
+        {$2\ast n$} es par, hipotesis indutiva\\
+        {$ n= n+1$}\\
+        {$2(n+1)$} es par\\
+        {$2n + 2$} es par\\
+        Por hipotesis inductiva 2n es par y 2 es par\\
+        R: 2 es par\\
+        
+        \item{$\forall\ n\geq 4.\ 2^n < n!$, donde $n!= 1\ast 2\ast 3\ast...\ast(n-1)\ast n  $}\\
+        \\
+        Caso base\\
+        {$n=4$}\\
+        {$2^4 < 1\ast 2\ast 3\ast 4$}\\
+        R: {$16 < 24$}\\
+        
+    
+        Caso inductivo\\
+        {$n = n+1$}\\
+        hipotesis inductiva\\
+        {$\forall\ n\geq 4.\ 2^n < n!$}\\
+        {$2^n+1 < (n+1)!$}\\
+        {$2^n\ast 2 < n! (n+1)$}\\
+        {$2[2^n < n!](n+1)$} {$=>$} Ej: {$2\ast 2^5 < 5! $}
+        {$64 < 720 $}\\
+        hipotesis inductiva\\
+        {$2\leq (n+1)$}\\
+        {$1\leq n$}\\
+        {$n\geq 4  => n\geq 1$}\\
+        
+      
+\end{enumerate}
+\section*{Ejercicio \#2: Induccion (60\%)}
+\begin{enumerate}
+        \item{La funcion factorial$(n!)$ en donde $n!= 1\otimes 2\otimes 3\otimes...\ast (n-1)\otimes n  $} \\
+         \\
+\(
+n! := \left\{
+ \begin{array}{l l}
+            1 & \mbox{si } n=0 \\
+            (x!)\otimes (\sigma(x)) & \mbox{si } n= \sigma(x) \\
+        \end{array}
+        \right.
+\) \\
+        \item{La funcion resta$(-)$ en donde:
+        \begin{itemize}
+         \item{$a\ominus b = 0$ si $a\leq b$ }
+          \item{$a\ominus b = a -b$ de lo contrario}
+          \end{itemize}
+        }\\
+        
+ \(
+a\ominus b := \left\{
+ \begin{array}{l l}
+            0 & \mbox{si } a\leq b \\
+            a & \mbox{si } b= 0 \\
+            \sigma(a-b) & \mbox{si } a =\sigma(x)\wedge a>b \\
+        \end{array}
+        \right.
+\) \\
+        
+         \item{La funcion sumatoria $\sum_{i}^{n}$ en donde $\sum_{i}^{n}= i\oplus (i\oplus 1)\oplus ...\oplus(n-1)\oplus n.$ En ontras palabras suma los numeros empezamos por i y terminamos en n.}\\
+         
+          \(
+\sum_{i}^{n} := \left\{
+ \begin{array}{l l}
+            n & \mbox{si } n = i \\
+           \sum_{i}^{x}\oplus \sigma(x) & \mbox{si } n= \sigma(x) \\
+        \end{array}
+        \right.
+\) \\
+         \item{La funcion exponente $a^b$ en donde $a^b= a\otimes a\otimes a...$(b veces)} \\
+          \\
+\(
+a^b := \left\{
+ \begin{array}{l l}
+            1 & \mbox{si } b = 0 \\
+            0 & \mbox{si } a = 0 \\ 
+            a\otimes a & \mbox{si } b = \sigma(i) \\
+        \end{array}
+        \right.
+\) \\
+      
+\end{enumerate}
+
+
+
+
+
+\section*{Ejercicio \#3: Induccion (20\%)}
+A continuaci\'on se presenta la definici\'on de la suma y multiplicaci\'on de n\'umeros unarios:\\
+\\
+\(
+a\oplus b := \left\{
+ \begin{array}{l l}
+            a & \mbox{si } b=1 \\
+            b & \mbox{si } a=1 \\
+            1\oplus(x\oplus b) & \mbox{si } a=\sigma(x) \\
+        \end{array}
+        \right.
+\)
+\(
+a\otimes b := \left\{
+ \begin{array}{l l}
+            0 & \mbox{si } a=o\vee b=0 \\
+            a & \mbox{si } b=1 \\
+            b & \mbox{si } a=1 \\
+            1\oplus(x\otimes b) & \mbox{si } a=\sigma(x) \\
+        \end{array}
+        \right.
+
+\)\\
+\\
+\setlength{\parindent}{0cm}
+
+Demostrar utilizando induccion que: \( 2 \otimes a = a \oplus a.\) Puede utilizar una definicion alterna (pero equivalente) de la suma o multiplicacion si lo desea. Recuerde de indicar claramente el caso base, el caso inductivo, la hipotesis inductiva y cada paso de la demostracion.\\ 
+
+Caso base\\
+{$a = 0$}\\
+{$2\otimes 0 = 0\oplus 0$}\\
+{$b\otimes 0 = 0$}\\
+{$ 0 = 0$}\\
+
+Caso inductivo\\
+\\
+{$ a =\sigma(x) $}\\
+hipotesis inductiva = {$ 2\otimes x = x\otimes x$}\\
+{$ b= \sigma(\sigma(0))$}\\
+{$ a = \sigma(x)$}\\
+{$ \sigma(\sigma(0))\otimes \sigma(x) = \sigma(x) \oplus \sigma(x)$}\\
+{$ a_1 = \sigma(i) = b$}\\
+{$ i= \sigma(0)$}\\
+{$ b_1 = \sigma(x) = a$}\\
+\begin{math}
+\sigma(x)\oplus (\sigma(0)\otimes \sigma(x)) = \sigma(x\oplus \sigma(x))\\
+a_2= \sigma(j)\\
+j = 0\\
+b_2 = \sigma(x) =a\\
+
+\sigma(x)\oplus \sigma(x)\oplus (0\otimes \sigma(x) ) = \sigma(x\oplus \sigma(x))\\
+\sigma(x)\oplus \sigma(x)\oplus 0 = \sigma(x\oplus \sigma(x))\\
+\sigma(x\oplus \sigma(x)) = \sigma(x\oplus \sigma(x))\\
+\\
+k = x\oplus \sigma(x)\\
+\sigma(k) = \sigma(k)\\
+
+\end{math}
+
+
+
+\end{document}

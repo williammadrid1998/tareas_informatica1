@@ -26,7 +26,7 @@ fibonacci n =
 primos : Int -> List Int
 primos ns = case ns of 
     0 -> []
-    1 -> [1]
+    1 -> []
     n -> if esPrimo n == True then n :: primos(n-1) else primos(n - 1)
 
 

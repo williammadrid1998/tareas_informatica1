@@ -14,7 +14,7 @@ esPrimo x = esP x 2
 
  
 --Ejercicion # 3 :
- 
+fibonacci : Int -> Int
 fibonacci n =
     case n of
     0 -> 0
@@ -38,7 +38,7 @@ npri a b =
     else if esPrimo b == False then npri a (b + 1) 
     else b :: npri (a - 1) (b + 1)
 
-
+nPrimos : Int -> List Int
 nPrimos  ns = npri ns 2 
 
 

@@ -37,7 +37,7 @@ zAlgebra x =
    let 
       iValor s = s  
       iSuma a b = modBy x (a + b )
-      iInverso y = -x
+      iInverso y = aux x (x-1) y (x-1)
    in  
       Algebra iValor iSuma iInverso  
 
